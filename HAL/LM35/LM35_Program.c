@@ -12,6 +12,7 @@
 #include "../../Common/Config.h"
 #if LM35_Driver
 
+#include "LM35_Interface.h"
 
 /** LM35 pin mapping for each zone. */
 static uint8_t LM35_Zone[MaxZones] = Zones_ADC_Channel;
@@ -20,7 +21,7 @@ void hLm35_Init(uint8_t ZoneNumber) {
     static uint8_t initialized = 0;
 
     // Initialize ADC :
-    if (ZoneNumber >= 1 && ZoneNumber < MaxZones) {
+    if (ZoneNumber >= 1 && ZoneNumber <= MaxZones) {
         DIO_Direction_Pin(GroupA, LM35_Zone[ZoneNumber-1], DIO_Input);
     }
     else {
@@ -35,7 +36,7 @@ void hLm35_Init(uint8_t ZoneNumber) {
 }
 
 int8_t hLm35_GetTemp(uint8_t ZoneNumber) {
-    if (ZoneNumber >= 1 && ZoneNumber < MaxZones) {
+    if (ZoneNumber >= 1 && ZoneNumber <= MaxZones) {
         static uint16_t DigitalVoltage = 0;
         static uint16_t LastDigitalVoltage = 0;
         static int8_t Temp_C = 0;

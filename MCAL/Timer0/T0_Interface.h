@@ -17,60 +17,35 @@
 #include "../../Common/Macro.h"
 #include "../RegistersAddress.h"
 #include <stdint.h>
-/*-------------------------------------------------------------------------------------*/
-/* CTC Mode */
-/** 
-* @fn       T0_CTC_Mode_Init
-* @brief    This Function is used to initialize Timer0 on CTC Mode 
-* @note     You can change the prescaler or compare value from the Config.h 
-*/
-
-void T0_CTC_Mode_Init();
-/*--------------------------------------------------*/
-
-/** 
-* @fn(ISR)    void __vector_10(void)
-* @brief      This Fn(ISR) is used to perform the a speceific action Contained in the Fn implemenetation
-* @note       Remember To Enable Global Interrupt 
-*/
-
-void __vector_10(void)  __attribute__((signal));
-
-/*-------------------------------------------------------------------------------------- */
-/** 
-* @fn       T0_FastPWM_Mode_Init
-* @brief    This Function is used to initialize Timer0 on Fast PWM Mode
-* @note     You can change the prescaler or duty cycle or output type from the interface 
-*/
-
-void T0_FastPWM_Mode_Init();
-
-/*------------------------------------------------*/
-
-/** 
-* @fn       mTimer0_ChangeDutyCycle
-* @brief    This Function is used to Change The Duty Cycle of the timer
-* @param    DutyCycle : The Value Of The Duty Cycle , options (0~100)
-* @param    ActionType: The Type Of Action That Will Be Performed When Changing The Duty Cycle
-                         and it's options are :
-                                    -inverting
-                                    -Non-inverting
-*
-*/ 
-
-void mTimer0_ChangeDutyCycle(uint8_t DutyCycle,uint8_t ActionType );
-
-
-
-/*---------------------------------------------------------------------------------------*/
 
 /**
- * @fn       T0_Call_Back_fn
- * @brief    This Function is used to set the Call Back Function That will be executed in Timer0 ISR
- * @param    PF : Pointer to Function that will be executed in the ISR
+ * @fn T0_FastPWM_Mode_Init
+ * @brief Initializes Timer0 in Fast PWM mode.
+ *
+ * @details Configures Timer0 registers for Fast PWM operation.
+ *          Uses predefined macros for prescaler, duty cycle, and output type.
+ *          This setup enables waveform generation with adjustable polarity and resolution.
+ *
+ * @note Modify `TimerPrescaller0`, `Timer0_InitDutyCycle`, and `FastPWM_OutputType`
+ *       in the configuration interface to customize behavior.
  */
-void T0_Call_Back_fn(void(*PF)(void));
-
-
-
+void T0_FastPWM_Mode_Init(void);
+/**--------------------------------------------------------------*/
+/**
+ * @fn mTimer0_ChangeDutyCycle
+ * @brief Updates the duty cycle of Timer0 in Fast PWM mode.
+ *
+ * @details Recalculates and sets the OCR0 register based on the desired duty cycle.
+ *          Adjusts waveform polarity according to the selected action type.
+ *
+ * @param DutyCycle Duty cycle percentage (0–100).
+ * @param ActionType Output polarity mode.
+ *        - `Inverting`: Output clears on compare match.
+ *        - `Non_inverting`: Output sets on compare match.
+ *
+ * @return void
+ *
+ * @note This function assumes Timer0 is already initialized in Fast PWM mode.
+ */
+void mTimer0_ChangeDutyCycle(uint8_t DutyCycle, uint8_t ActionType);
 #endif /*_T0_INTERFACE_H_*/

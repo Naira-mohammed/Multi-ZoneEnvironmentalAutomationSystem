@@ -13,7 +13,7 @@
 
 #include "HC05_Interface.h"
 
-
+ 
 /**
  * @brief the ring buffer of the HC05 is declared as RxBufer, it's an array of size 256 bytes.
  *        to implement it, Head,Tail,Count are also declared.
@@ -40,14 +40,15 @@ void hHC05_Init(void)
 {
     DIO_Direction_Pin(Bluetooth_TxGroup, Bluetooth_TxPin, DIO_Input);
     DIO_Direction_Pin(Bluetooth_RxGroup, Bluetooth_RxPin, DIO_Output);
-    mUart_CallBack(hHC05_RxISRHandler);
+    mUART_RxCallBack(hHC05_RxISRHandler);
     RxBuffer_Init();
-    USART_Init();
+    mUART_Init();
+    mUART_Receive_and_RxInterruptMode(); // Was added to Enable Interrupt
 }
 
 void hHC05_SendChar(uint8_t Char)
 {
-    USART_Transmit(Char);
+    mUART_Transmit(Char);
 }
 
 void hHC05_SendString(const uint8_t *String)
@@ -73,21 +74,33 @@ void hHC05_ReceiveChar(uint8_t *Char)
   }
 
 void hHC05_ReceiveString(uint8_t *String, uint16_t maxLen)
-  {
-    uint8_t Counter=0;
-    uint8_t RxChar=0;
-    enum BufferState state = GetBufferState();
-    while ((state!=Empty) && (Counter < maxLen-1))
+{
+
+    uint16_t Counter = 0;
+    uint8_t RxChar = 0;
+
+    while (Counter < maxLen - 1)   
     {
-        RxChar=Dequeue_Buffer();
-        String[Counter++]=RxChar;
-        if (RxChar=='\n' || RxChar=='\r')
+        uint32_t Timeout = Timeout_Limit;
+        while (GetBufferState() == Empty)
+        {
+            --Timeout;
+            if (Timeout == 0)
+            {
+                String[Counter]=NullChar;
+                break;
+            }
+        }
+        RxChar = Dequeue_Buffer();
+        String[Counter++] = RxChar;
+        if (RxChar == '\n' || RxChar == '\r')
         {
             break;
         }
     }
-    String[Counter] = NullChar;
-  }
+    String[Counter] = NullChar;  
+}
+
 
   
 void hHC05_RxISRHandler(uint16_t byte)
