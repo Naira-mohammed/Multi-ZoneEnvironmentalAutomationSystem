@@ -16,6 +16,7 @@
 #define _T2_CONFIG_H_
 #include "T2_Private.h"
 #include "../../Common/Macro.h"
+
 /**
  * @def Timer2_Prescaller
  * @brief Prescaler setting for Timer2.

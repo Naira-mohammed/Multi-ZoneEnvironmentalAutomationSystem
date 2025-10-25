@@ -56,7 +56,6 @@
  */
 #define initialDutyCycle 0
 
-
 /**
  * @def Timer1_NoClkMask
  * @brief Mask to disable Timer1 clock source (CS12:CS10 cleared).
