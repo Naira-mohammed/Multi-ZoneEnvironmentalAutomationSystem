@@ -100,7 +100,7 @@ The user controls lights and fans in each zone via Bluetooth (HC-05) commands.
 
 The command format is:
 
-Z<zone_id><actuator>=<value>
+Z <zone_id> <actuator> = <value>
 
 
 Example: Z2FAN=20 → sets fan speed to 20 in Zone 2
