@@ -80,10 +80,28 @@ Create a system to automate environment control across multiple zones (e.g., two
 
 ## System Workflow
 
-1. Continuously read sensor data per zone.
-2. In Auto Mode:
-   * Light turns on if LDR reads low light.
-   * Fan turns on if temperature exceeds threshold.
-3. In Manual Mode:
-   * User manually toggles fan/light with button.
-4. LCD alternates between Zone A and Zone B readings.
+The system continuously reads sensor data (LDR & LM35) from four environmental zones.
+
+Each zone includes a fan and a light that can be controlled automatically or manually.
+
+🔹 Auto Mode:
+
+The system automatically controls the actuators based on sensor readings:
+
+Lighting: Turns ON when the LDR detects low light (evening) and OFF when brightness increases (morning).
+
+Fan: Adjusts its speed based on temperature thresholds from the LM35 sensor (e.g., higher temperature → higher fan speed).
+
+Decisions are made independently for each zone according to predefined thresholds.
+
+🔹 Manual Mode:
+
+The user controls lights and fans in each zone via Bluetooth (HC-05) commands.
+
+The command format is:
+
+Z<zone_id><actuator>=<value>
+
+
+Example: Z2FAN=20 → sets fan speed to 20 in Zone 2
+Example: Z3LIGHT=ON  → turns ON light in Zone 3
