@@ -24,7 +24,6 @@
  *              
  *              2- you can get the idea of these vars from the mode control app files it appears to have my point
  */
-
 uint8_t MultizoneApp_Init()
 {
     ModeControl_Init();
