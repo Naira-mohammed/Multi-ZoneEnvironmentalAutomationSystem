@@ -31,7 +31,6 @@
 
 static uint8_t ZoneControl_Initialized=0;
 
-
 /*for loop counter*/
 static uint8_t Zone_Index = MinZones;
 
