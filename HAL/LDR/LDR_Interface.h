@@ -9,7 +9,6 @@
  * @copyright Copyright (c) 2025 , Gestell Company 
  */
 
-
 #ifndef _LDR_INTERFACE_H_
 #define _LDR_INTERFACE_H_
 

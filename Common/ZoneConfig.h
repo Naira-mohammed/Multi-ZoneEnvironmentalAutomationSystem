@@ -14,7 +14,6 @@
 #define _ZONECONFIG_H_
 
 
-
 #include "Macro.h"
 #include "../MCAL/DIO/DIO_Private.h"
  

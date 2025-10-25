@@ -7,7 +7,6 @@
  * @date 2025-08-30
  *
  * @copyright Copyright (c) 2025 , Gestell Company
- *
  */
 
 #include "../../Common/Config.h"

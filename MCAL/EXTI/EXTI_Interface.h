@@ -11,7 +11,6 @@
 
 #ifndef _EXTI_INTERFACE_H_
 #define _EXTI_INTERFACE_H_
-
 /**
  * @defgroup EXTI_Driver EXTI Driver
  * @brief APIs for External Interrupt configuration and handling

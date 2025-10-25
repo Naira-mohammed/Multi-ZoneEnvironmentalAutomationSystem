@@ -15,7 +15,6 @@
 #include "T0_Interface.h"
 
 
-
 void T0_FastPWM_Mode_Init()
 {
 	// remember that fast pwm must be initialized with complete config at the same time so better is to make a temporarily variable

@@ -10,8 +10,6 @@
  */
 
 
-
-
 #ifndef _LCD_INTERFACE_H_
 #define _LCD_INTERFACE_H_
 

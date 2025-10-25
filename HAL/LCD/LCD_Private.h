@@ -9,7 +9,6 @@
  * @copyright Copyright (c) 2025 , Gestell Company 
  */
 
-
 #ifndef _LCD_PRIVATE_H_
 #define _LCD_PRIVATE_H_
 

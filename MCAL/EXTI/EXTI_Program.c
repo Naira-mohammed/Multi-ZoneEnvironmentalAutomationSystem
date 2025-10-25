@@ -21,7 +21,7 @@
 #include <stdint.h>
 
 /** @addtogroup EXTI_Private
- * @{
+ * 
  */
 
 /**

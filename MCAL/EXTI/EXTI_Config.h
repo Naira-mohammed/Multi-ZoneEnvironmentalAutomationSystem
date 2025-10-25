@@ -11,7 +11,6 @@
 
 #ifndef _EXTI_CONFIG_H_
 #define _EXTI_CONFIG_H_
-
 /**
  * @defgroup EXTI_Config EXTI Configuration
  * @brief User-configurable settings for External Interrupts

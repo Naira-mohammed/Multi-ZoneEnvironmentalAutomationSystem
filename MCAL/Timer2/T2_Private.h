@@ -7,7 +7,6 @@
  * @date 2025-08-30
  *
  * @copyright Copyright (c) 2025 , Gestell Company
- *
  */
 
 #ifndef _T2_PRIVATE_H_

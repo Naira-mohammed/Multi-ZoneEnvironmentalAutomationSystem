@@ -8,7 +8,6 @@
  * @copyright Copyright (c) 2025 , Gestell Company 
  */
 
-
 #ifndef _LED_INTERFACE_H_
 #define _LED_INTERFACE_H_
 

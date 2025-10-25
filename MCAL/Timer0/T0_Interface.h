@@ -18,6 +18,7 @@
 #include "../RegistersAddress.h"
 #include <stdint.h>
 
+
 /**
  * @fn T0_FastPWM_Mode_Init
  * @brief Initializes Timer0 in Fast PWM mode.

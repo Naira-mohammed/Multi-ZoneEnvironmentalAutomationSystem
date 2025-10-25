@@ -10,7 +10,6 @@
  * 
  */
 
-
 #ifndef _T2_INTERFACE_H_
 #define _T2_INTERFACE_H_
 

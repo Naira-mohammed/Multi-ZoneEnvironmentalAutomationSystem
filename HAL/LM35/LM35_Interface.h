@@ -9,6 +9,7 @@
  * @copyright Copyright (c) 2025 , Gestell Company 
  */
 
+ 
 #ifndef _LM35_INTERFACE_H_
 #define _LM35_INTERFACE_H_
 

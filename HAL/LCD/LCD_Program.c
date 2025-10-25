@@ -10,7 +10,6 @@
  */
 
 
-
 #include "../../Common/Config.h"
 #if LCD_Driver
 

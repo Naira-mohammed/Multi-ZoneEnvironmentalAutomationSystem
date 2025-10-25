@@ -10,6 +10,7 @@
 #include "../../Common/Config.h"
 #if Communication_App 
 
+
 #include "Communication_Interface.h"
 #include "../../HAL/LDR/LDR_Interface.h"
 #include "Communication_Private.h"
