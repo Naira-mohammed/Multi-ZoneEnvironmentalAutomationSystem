@@ -15,6 +15,7 @@
 #include "../../Common/Macro.h"
 #include "../../Common/ZoneConfig.h"
 
+
 /**
  * @def   Fan_MAXSpeed
  * @brief Defines the maximum speed value for the DC fan.
