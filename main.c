@@ -7,7 +7,8 @@
  * @author      Mohammed Atif   medoatifatif@gmail.com
  * @author      Hozifa Ahmed    hozifasedik@gmail.com
  * @author      Ahmed Ashraf    ahmedashraf2022222@gmail.com
- * @brief       Create a system to automate environment control across multiple zones (e.g., two rooms) using sensors and actuators for each zone.
+ * @brief       Create a system to automate environment control across multiple zones 
+ *              (e.g., two rooms) using sensors and actuators for each zone.
  * @version     0.1
  * @date        2025-09-19
  * @copyright   Copyright (c) 2025 ,Gestell Company

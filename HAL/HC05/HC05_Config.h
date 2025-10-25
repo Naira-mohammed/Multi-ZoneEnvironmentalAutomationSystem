@@ -27,7 +27,7 @@
  * @note The effective timeout duration depends on the system clock frequency
  *       and the speed of the polling loop.
  */
-#define Timeout_Limit  800000
+#define Timeout_Limit  400000
 
 /**
  * @def Buffer_Size
