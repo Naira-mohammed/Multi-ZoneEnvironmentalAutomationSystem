@@ -12,7 +12,6 @@
 #if HC05_Driver
 
 #include "HC05_Interface.h"
-
  
 /**
  * @brief the ring buffer of the HC05 is declared as RxBufer, it's an array of size 256 bytes.

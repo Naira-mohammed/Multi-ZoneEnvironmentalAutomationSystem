@@ -15,6 +15,7 @@
 #ifndef _HC05_CONFIG_H_
 #define _HC05_CONFIG_H_
 
+
 /**
  * @def Timeout_Limit
  * @brief Defines the maximum timeout threshold for UART data reception.
