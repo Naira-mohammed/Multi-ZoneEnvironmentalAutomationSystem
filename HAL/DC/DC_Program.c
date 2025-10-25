@@ -30,8 +30,6 @@ static uint8_t ZonesGroups[MaxZones] = Zones_DCGroups;
 static uint8_t ZonesPins[MaxZones] = Zones_DCPins;
 
 
-
-
 void hFan_Init(uint8_t ZoneNumber)
 {
     DIO_Direction_Pin(ZonesGroups[ZoneNumber - 1], ZonesPins[ZoneNumber - 1], Output);
