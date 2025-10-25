@@ -10,7 +10,6 @@
  * 
  */
 
-
 #ifndef _T1_INTERFACE_H_
 #define _T1_INTERFACE_H_
 #include "T1_Private.h"
