@@ -9,7 +9,8 @@
  * @copyright Copyright (c) 2025 , Gestell Company 
  * 
  */
-#include "../../Common/Config.h"
+
+ #include "../../Common/Config.h"
 #if TIMER1_Driver
 #include "T1_Interface.h"
 
